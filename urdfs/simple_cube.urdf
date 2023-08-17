@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="cube">
+    <!-- some joints are 'free' in the environment:
+    they can move x, y, z, and rotate. For that reason, we define 'virtual'
+    joints to allow us to manipulate their position. -->
+    <!--link name="base_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+        </inertial>
+    </link-->
+
+    <link name="cube">
+        <inertial>
+            <origin xyz="-0.587 -0.233 0.256" rpy="0 0 0"/>
+            <mass value="0.01"/>
+            <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+        </inertial>
+
+        <visual>
+            <geometry>
+                <mesh filename="./meshes/cube.stl"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="./meshes/cube.stl"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--joint name="cube_joint_x" type="prismatic">
+        <parent link="base_link"/>
+        <child link="cube_link_x"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.5"/>
+    </joint>
+    <link name="cube_link_x" />
+
+    <joint name="cube_joint_y" type="prismatic">
+        <parent link="cube_link_x"/>
+        <child link="cube_link_y"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.5"/>
+    </joint>
+    <link name="cube_link_y" />
+
+    <joint name="cube_joint_z" type="prismatic">
+        <parent link="cube_link_y"/>
+        <child link="cube"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="0.5"/>
+    </joint-->
+</robot>
